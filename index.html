@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>My Library</h1>
+        <button id="new-book-btn">New Book</button> 
+    </header>
+     
+    <dialog id="book-dialog">
+        <form id="book-form">
+            <h2>Add a new book</h2>
+
+            <label for="title">title</label>
+            <input type="text" id="title" required>
+
+            <label for="author">author</label>
+            <input type="text" id="author" required>
+
+            <label for="pages">Pages:</label>
+            <input type="number" id="pages" required>
+
+            <label for="read">Have you read it?</label>
+            <input type="checkbox" id="read">
+
+            <button type="submit">Add Book</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+
+
+        </form>
+
+    </dialog>
+    <main class="main-content"> 
+        <div id="library"></div> <!-- This is where javascript inserts the book cards  -->
+    </main>
+
+    <footer class="footer">
+        <p>Created by <a href="https://github.com/Engr-Steph" target="_blank">Engr-Steph</a></p>
+    </footer>
+</body>
+</html>
