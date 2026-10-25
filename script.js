@@ -77,8 +77,42 @@ newBookButton.addEventListener("click", function(){
 cancelButton.addEventListener("click", function(){
     bookDialog.close();
 });
+
+
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
+
+titleInput.addEventListener("input", function() {
+    titleInput.setCustomValidity("");
+});
+
+authorInput.addEventListener("input", function() {
+    authorInput.setCustomValidity("");
+});
+
+pagesInput.addEventListener("input", function() {
+    pagesInput.setCustomValidity("");
+});
 bookForm.addEventListener("submit", function(event){
     event.preventDefault();
+
+    titleInput.setCustomValidity(
+        titleInput.value.trim() ? "" : "The book title must be filled!"
+    );
+
+    authorInput.setCustomValidity(
+        authorInput.value.trim() ? "" : "The author name must be filled!"
+    );
+
+    pagesInput.setCustomValidity(
+        pagesInput.value.trim() ? "" : "The number of pages must be filled!"
+    );
+
+    if (!bookForm.checkValidity()) {
+        bookForm.reportValidity();
+        return;
+    }
 
     const title = document.querySelector("#title").value;
     const author = document.querySelector("#author").value;
